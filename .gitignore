@@ -1,0 +1,19 @@
+# Python Virtual Environment
+venv/
+env/
+ENV/
+
+# Environment / Secret keys
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Database (if using local SQLite)
+*.sqlite3
+
+# Node modules (if using React/Vue/Node front-end)
+node_modules/
+dist/
+build/
