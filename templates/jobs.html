@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Listings</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <!-- Page title -->
+    <h3>Available Part-time Jobs</h3>
+
+    <!-- Job list container -->
+    <div class="list-group mt-3">
+
+        <!-- Loop through jobs passed from Django view -->
+        {% for job in jobs %}
+
+            <!-- Single job card -->
+            <div class="list-group-item">
+                <h6>{{ job.title }}</h6> <!-- Job title -->
+                <p>{{ job.description }}</p> <!-- Job description -->
+            </div>
+
+        {% empty %}
+
+            <!-- Message when no jobs exist -->
+            <div class="alert alert-info">
+                No jobs available at the moment.
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- Back button to dashboard -->
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3">Back</a>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+     
+<!-- Custom JS -->
+<script src="{% static 'JS/javascript.js' %}"></script>
+
+
+</body>
+</html>

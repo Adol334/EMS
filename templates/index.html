@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> EMS | Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Dashboard background image */
+        body.dashboard-bg {
+            background-image: url("{% static 'assets/images/dashboard.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+        
+        /* Card hover effect */
+        .dashboard-card{
+            transition: 0.3s;
+            border-radius: 12px;
+        }
+
+        .dashboard-card:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba (0,0,0,0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-light dashboard-bg">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <!-- App name -->
+            <a class="navbar-brand" href="#">EMS💰</a>
+
+            <!-- Django Logout button -->
+            <a class="btn btn-light btn-sm" href="{% url 'logout' %}">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Dashboard content -->
+    <div class="container mt-5">
+        <!-- Page heading -->
+        <h3 class="text-dark fw-bold">Dashboard</h3>
+        <p class="text-muted">Manage your finances with EMS</p>
+        
+        <!-- Feature cards grid -->
+        <div class="row g-4 mt-2">
+
+            <!-- Income module -->
+            <div class="col-md-4">
+                <a href="{% url 'add_income' %}" class="text-decoration-none">
+                    <div class="card dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                          <h5>Income</h5>
+                          <p class="text-muted">Add your income</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Expense module -->
+            <div class="col-md-4">
+                <a href="{% url 'add_expense'%}" class="text-decoration-none">
+                    <div class="card dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                           <h5>Expense</h5>
+                           <p class="text-muted">Add your expenses</p>
+                        </div>
+                    </div>     
+                </a>
+            </div>
+
+            <!-- Savings module -->
+            <div class="col-md-4">
+                <a href="{% url 'saving' %}" class="text-decoration-none">
+                    <div class="card Dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5>Savings</h5>
+                            <p class="text-muted">View savings</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Reports module -->
+            <div class="col-md-4">
+                <a href="{% url 'report' %}" class="text-decoration-none">
+                    <div class="card dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5>Reports</h5>
+                            <p class="text-muted">Financial Summary</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Advisory module -->
+            <div class="col-md-4">
+                <a href="{% url 'advisory' %}" class="text-decoration-none">
+                    <div class="card dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5>Financial Advisory</h5>
+                            <p class="text-muted">Get budgeting tips</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Jobs module -->
+            <div class="col-md-4">
+                <a href="{% url 'jobs' %}" class="text-decoration-none">
+                    <div class="card dashboard-card text-center shadow-sm">
+                        <div class="card-body">
+                            <h5>Part-time Jobs</h5>
+                            <p class="text-muted">Find Job opportunities</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div> 
+    </div>
+</body>
+</html>

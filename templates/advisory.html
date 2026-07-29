@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Advisory</title>
+     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+     
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+
+        <!-- Page title -->
+        <h3>Financial Advice</h3>
+         
+        <!-- General advice section -->
+        <h5 class="text-muted mt-4 mb-2">General Advice</h5>
+        <ul class="list-group shadow-sm">
+            <li class="list-group-item bg-white text-dark">
+                <strong>Budgeting:</strong> Create a budgeting plan and stick to it to avoid running out of funds.
+            </li>
+            <li class="list-group-item bg-white text-dark">
+                <strong>Savings:</strong> Save at least 15% of your income.
+            </li>
+            <li class="list-group-item bg-white text-dark">
+                <strong>Discipline:</strong> Avoid impulse spending.
+            </li>
+            <li class="list-group-item bg-white text-dark">
+                <strong>Tracking:</strong> Track daily expenses consistently; small unmonitored costs add up fast.
+            </li>
+        </ul>
+        
+        <!-- Personalized advice section (from backend) -->
+        {% if tips %}
+            <h5 class="text-primary mt-4 mb-2">✨ Personalized Advice For You</h5>
+            <ul class="list-group shadow-sm">
+                {% for tip in tips %}
+                    <li class="list-group-item list-group-item-info">
+                        <strong>{{ tip.category }}:</strong> {{ tip.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <!-- Back button -->
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-4">Back</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+     
+    <!-- Custom JS -->
+    <script src="{% static 'JS/javascript.js' %}"></script>
+
+</body>
+</html>

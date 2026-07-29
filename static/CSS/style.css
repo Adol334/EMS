@@ -1,0 +1,157 @@
+/* =========================================
+   EMS CUSTOM STYLESHEET
+   ========================================= */
+
+
+/* Global Page Styling */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light Bootstrap background */
+    min-height: 100vh;
+}
+
+
+/* Container size control */
+.container {
+    max-width: 900px;
+}
+
+
+/* Card styling */
+.card {
+    border-radius: 8px;
+    border: none;
+    transition: height 0.3s ease; 
+    overflow: hidden;
+}
+
+
+/* Headings style */
+h3, h4, h5 {
+    font-weight: 600;
+    color: #212529;
+}
+
+
+/* Form labels */
+.form-label {
+    font-weight: 500;
+}
+
+/* Form input fields */
+.form-control {
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd; 
+}
+
+
+
+/* Buttons */
+.btn {
+    border-radius: 5px;
+}
+/* Success button */
+.btn-success {
+    background-color: #198754;
+}
+/* Secondary button */
+.btn-secondary {
+    background-color: #6c757d;
+}
+/* Danger button */
+.btn-danger {
+    background-color: #dc3545;
+}
+/* Hover effect for success button */
+.btn-success:hover {
+    background-color: #157347; 
+    filter: brightness(90%);
+}
+
+
+
+/* Navbar branding */
+.navbar-brand {
+    font-weight: bold;
+}
+
+
+/* Dashboard cards hover effect */
+.dashboard-card {
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Report card styling */
+.report-card h5 {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.report-card h3 {
+    font-weight: bold;
+}
+
+
+/* List styling (Jobs & Advisory) */
+.list-group-item {
+    font-size: 0.95rem;
+}
+
+
+/* Centered layout (Login / Logout pages) */
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide Django password validation text */
+#register-box .helptext, 
+#register-box .help-block, 
+#register-box span.helptext {
+    display: none !important; 
+    font-size: 0.82rem;
+    color: #6c757d;
+    background: #fdfdfe;
+    padding: 10px;
+    border-left: 3px solid #0d6efd;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* Registration spacing */
+#register-box p {
+    margin-bottom: 1rem;
+}
+
+/* Form error messages */
+.registration-form .errorlist {
+    color: #dc3545;          
+    list-style-type: none;   
+    padding-left: 0;         
+    font-size: 0.85rem;      
+    font-weight: 500;       
+    margin-bottom: 5px;      
+}

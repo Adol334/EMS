@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Savings</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body class="bg-light">
+
+    <!-- Savings summary card -->
+    <div class="card p-4 shadow-sm">
+    <p class="mb-3">
+        <!-- Total income display -->
+        <strong>Total Income:</strong> 
+        <span class="float-end">KES {{ total_income|floatformat:2 }}</span>
+    </p>
+    
+    <!-- Automated savings (15%) -->
+    <p class="mb-3 text-success">
+        <strong>Automated Savings (15%):</strong> 
+        <span class="float-end">KES {{ automated_savings|floatformat:2 }}</span>
+    </p>
+
+    <hr>
+
+    <p class="h5">
+        <!-- Net savings summary -->
+        <strong>Total Net Savings:</strong> 
+        <span class="float-end text-primary">KES {{ automated_savings|floatformat:2 }}</span>
+    </p>
+    
+    <!-- Back to dashboard -->
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary mt-4 w-100">Back</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+     
+    <!-- Custom JS -->
+    <script src="{% static 'JS/javascript.js' %}"></script>
+
+    
+</body>
+</html>
